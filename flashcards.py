@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, abort 
 from datetime import datetime
 from model import db
 
@@ -14,11 +14,13 @@ def welcome():
 def date():
     return "This page was served at " + str(datetime.now())
 
-
 @app.route("/card")
 def card_view():
-    card = db[0]
-    return render_template("card.html", card=card)
+    #try: 
+        card = db[0]
+        return render_template("card.html", card=card)
+   # except IndexError: 
+    #    return(404)
 
 #add how many times this page was viewed
 #counter =0
