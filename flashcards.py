@@ -1,4 +1,4 @@
-from flask import Flask, render_template, abort 
+from flask import Flask, render_template
 from datetime import datetime
 from model import db
 
@@ -16,16 +16,5 @@ def date():
 
 @app.route("/card")
 def card_view():
-    #try: 
-        card = db[0]
-        return render_template("card.html", card=card)
-   # except IndexError: 
-    #    return(404)
-
-#add how many times this page was viewed
-#counter =0
-#@app.route("/counter")
-#def count():
-#    global counter
-#    counter += 1
-#    return "this page was viewed :" + str(counter) + " times"
+    card = db[0]
+    return render_template("card.html", card=card)
