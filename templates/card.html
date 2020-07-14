@@ -8,6 +8,17 @@
     <h1>Flash Card</h1>
     Question: {{ card.question }} <br>
     Answer:   {{ card.answer }}
+    <p>
+        <!-- Welcome page here (Homework 1)-->
+        <a href="{{url_for('welcome') }}">Home</a> 
+        {%if index < max_index%}
+        <button>
+            <a href="{{ url_for('card_view', index=index+1) }}">Next</a>
+        {%else%}
+           <a href="{{ url_for('card_view', index=0) }}">Start Over</a>
+        {% endif %}
+        </button>
+    </p>
   
 </body>
 </html>
