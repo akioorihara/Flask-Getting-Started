@@ -14,6 +14,10 @@ def welcome():
 def date():
     return "This page was served at " + str(datetime.now())
 
+@app.route("/add_card")
+def add_card():
+    return render_template('add_card.html')
+
 @app.route("/card/<int:index>")
 def card_view(index):
     try:
