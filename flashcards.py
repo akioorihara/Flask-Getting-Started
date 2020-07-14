@@ -1,4 +1,4 @@
-from flask import Flask, render_template, abort, jsonify
+from flask import (Flask, render_template, abort, jsonify, request, redirect, url_for)
 from datetime import datetime
 from model import db
 
@@ -16,7 +16,15 @@ def date():
 
 @app.route("/add_card")
 def add_card():
-    return render_template('add_card.html')
+    if request.method == 'POST':
+    #form submits, process data 
+        card = {"question":request.form['question'],
+                "answer": request.form['answer']}
+        db.append(card)
+
+    else: 
+        return render_template('add_card.html')
+
 
 @app.route("/card/<int:index>")
 def card_view(index):
