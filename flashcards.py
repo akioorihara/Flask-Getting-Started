@@ -14,14 +14,13 @@ def welcome():
 def date():
     return "This page was served at " + str(datetime.now())
 
-@app.route("/add_card")
+@app.route("/add_card", methods=['GET', 'POST'])
 def add_card():
     if request.method == 'POST':
     #form submits, process data 
-        card = {"question":request.form['question'],
-                "answer": request.form['answer']}
+        card = {"question":request.form['question'],"answer": request.form['answer']}
         db.append(card)
-
+        return redirect(url_for('card_view', index=len(db)-1))
     else: 
         return render_template('add_card.html')
 
