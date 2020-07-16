@@ -17,20 +17,18 @@ def date():
 @app.route('/add_card', methods=["GET", "POST"])
 def add_card():
     if request.method == "POST":
-        # form has been submitted, process data
-        card = {"question": request.form['question'],
-                "answer": request.form['answer']}
+        
+        card = {"question": request.form['question'], "answer": request.form['answer']}
         db.append(card)
         save_db()
         return redirect(url_for('card_view', index=len(db)-1))
     else:
         return render_template("add_card.html")
 
-
-
-#@app.route("/remove_card")
-#def remove_card():
-
+#Write a view that shows the remove_card template --still working on this  
+@app.route("/remove_card")
+def remove_card():
+    return render_template()
     
 
 
