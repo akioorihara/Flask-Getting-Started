@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> Welcome!</title>
-</head>
-<body>
-    <h1>Welcome to my page</h1>
-    <p>This is the demo app for the course <em>Getting Started with Flask</em>
+{% extends "base.html %"}
+
+{%block title%}Welcome{%endblock%}
+
+{%block content%}
+
+<h1>Welcome to my page</h1>
+<p>This is the demo app for the course <em>Getting Started with Flask</em>
         on <a href=https://oriharaorchards.com"> Orihara Orchards </a>
-    </p>
-    <img src="/static/flasklogo.png">
+</p>
+<img src="/static/flasklogo.png">
 <h2>
     Flasdcards
 </h2>
@@ -22,5 +21,4 @@
     </li>
     {% endfor %}
 </ul>
-</body>
-</html>
+{%endblock}
