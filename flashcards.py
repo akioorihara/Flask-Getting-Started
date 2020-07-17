@@ -25,7 +25,7 @@ def add_card():
     else:
         return render_template("add_card.html")
 
-#Write a view that shows the remove_card template --still working on this  
+#Write a view that shows the remove_card template  
 @app.route('/remove_card/<int:index>', methods=['GET', 'POST'])
 def remove_card(index):
     try:
