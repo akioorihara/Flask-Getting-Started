@@ -1,12 +1,11 @@
-{% extends "base.html %"}
+{% extends "base.html" %}
 
-{%block title%}Welcome{%endblock%}
+{% block title %}Welcome{% endblock %}
 
 {%block content%}
-
 <h1>Welcome to my page</h1>
 <p>This is the demo app for the course <em>Getting Started with Flask</em>
-        on <a href=https://oriharaorchards.com"> Orihara Orchards </a>
+        on <a href="https://oriharaorchards.com"> Orihara Orchards </a>
 </p>
 <img src="/static/flasklogo.png">
 <h2>
@@ -16,9 +15,9 @@
     {%for card in cards %}
     <li>
         <a href="{{url_for('card_view',index=loop.index0) }}">
-            {{card.question}}
+            {{card.question}}  <!-- this line needs to be under this func-->
         </a>
     </li>
     {% endfor %}
 </ul>
-{%endblock}
+{% endblock %}
