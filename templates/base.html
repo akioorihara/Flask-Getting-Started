@@ -3,8 +3,8 @@
 <head>
     <meta charset="en">
     <title>{% block title %} {% endblock %}</title>
-   <!-- This does not work and why? <link ref="stylesheet" href="{{ url_for('static', filename='style.css') }}">  -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+    
 </head>
 <body>
     {% block content %}
